@@ -6,7 +6,7 @@ const jwtFrom = ({headers}) => {
     if (headers?.authorization){
         const [scheme, token] = headers.authorization.split(" ")
         if (scheme.trim() === "Bearer") {
-            return token
+            return token;
         }
     }
 
@@ -42,4 +42,5 @@ const extractUserFromJwt =(req, res, next) => {
     module.exports = {
         extractUserFromJwt,
         requireAuthenticatedUser,
+        jwtFrom,
     }
